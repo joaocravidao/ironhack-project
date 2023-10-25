@@ -3,7 +3,7 @@ class Game {
     this.startScreen = document.getElementById("game-intro");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
-    this.player = new Player(this.gameScreen, 200, 500, 35, 35, "./images/snake-body4.png");
+    this.player = new Player(this.gameScreen, 200, 500, 35, 35, "./images/snake-head4.png"); // Snake head
     this.height = 500;
     this.width = 500;
     this.obstacles = [];

@@ -81,6 +81,10 @@
         playerRect.bottom > obstacleRect.top
       ) {
         this.grow();
+
+        const eatSound = document.getElementById("eatSound");
+        eatSound.play();
+
         return true;
         
       } else {
@@ -100,6 +104,31 @@
         playerRect.bottom > segmentRect.top
       );
     }
+
+    reset(initialLeft, initialTop, imgSrc) {
+      // Clear the existing segments
+      /*this.segments.forEach(segment => {
+        segment.remove();
+      });
+      this.segments = [];
+    
+      // Create and add the initial head segment with new coordinates and image source
+      const head = this.createSegment(initialLeft, initialTop, imgSrc);
+      this.segments.push(head);*/
+
+      for (let i = this.segments.length - 1; i > 0; i--) {
+        this.segments[i].remove();
+      }
+      this.segments = [this.segments[0]]; // Keep the head
+    
+      // Update the head's position and image source
+      const head = this.segments[0];
+      head.src = imgSrc;
+      head.style.left = `${initialLeft}px`;
+      head.style.top = `${initialTop}px`;
+    }
+
+
 
   }
   

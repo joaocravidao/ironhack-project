@@ -32,10 +32,31 @@ window.onload = function () {
     startCountdown(); // Start the countdown when you click the "Start Game" button
   });
 
-  restartButton.addEventListener("click", function() {
+  /*restartButton.addEventListener("click", function() {
     console.log("Restarting the game");
+ 
+    function restartGame(){
+      location.reload();
+    };
+
+    if (game) {
+
+      //game.gameScreen.innerHTML = ''; //basically we set the gamescreen to an empty screen so then we can restart
+
+      game.player.reset(); // Reset the player
+      game.endGame(); // Dont think its needed
+      //startGame();
+    }
+
     startGame();
+  });*/
+
+  restartButton.addEventListener("click", function () {
+    restartGame();
   });
+  function restartGame() {
+    location.reload();
+  }
   
   function startGame() {
     console.log("start game");
@@ -63,20 +84,20 @@ window.onload = function () {
       if (game) {
         // Check if the new direction is not opposite to the current direction
         if (key === "ArrowLeft" && game.player.currentDirection !== "ArrowRight") {
-          game.player.directionX = -4;
+          game.player.directionX = -6;
           game.player.directionY = 0;
           game.player.currentDirection = key;
         } else if (key === "ArrowUp" && game.player.currentDirection !== "ArrowDown") {
           game.player.directionX = 0;
-          game.player.directionY = -4;
+          game.player.directionY = -6;
           game.player.currentDirection = key;
         } else if (key === "ArrowRight" && game.player.currentDirection !== "ArrowLeft") {
-          game.player.directionX = 4;
+          game.player.directionX = 6;
           game.player.directionY = 0;
           game.player.currentDirection = key;
         } else if (key === "ArrowDown" && game.player.currentDirection !== "ArrowUp") {
           game.player.directionX = 0;
-          game.player.directionY = 4;
+          game.player.directionY = 6;
           game.player.currentDirection = key;
         }
       }
