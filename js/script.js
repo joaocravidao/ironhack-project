@@ -1,8 +1,11 @@
+// This function runs when the window has finished loading
 window.onload = function () {
+  // Get references to the start and restart buttons and initialize the game variable
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
   let game;
 
+  // Add a click event listener to the "Start Game" button
   startButton.addEventListener("click", function () {
     // Hide or remove the game intro elements
     const gameIntro = document.getElementById("game-intro");
@@ -32,24 +35,26 @@ window.onload = function () {
     startCountdown(); // Start the countdown when you click the "Start Game" button
   });
 
-  restartButton.addEventListener("click", function() {
+  // Add a click event listener to the "Restart" button
+  restartButton.addEventListener("click", function () {
     console.log("Restarting the game");
     restartGame();
   });
+
+  // Function to restart the game by reloading the page
   function restartGame() {
     location.reload();
   }
 
-
+  // Function to start the game
   function startGame() {
     console.log("start game");
-  
     game = new Game(); // Create a new game instance first
     game.gameEndScreen.style.display = "none"; // Then hide the game end screen
     game.start(); // Finally, start the game
   }
 
-  // Function that handles keys events
+  // Function that handles key events
   function handleKeydown(event) {
     const key = event.key;
 
@@ -57,7 +62,7 @@ window.onload = function () {
       "ArrowLeft",
       "ArrowUp",
       "ArrowRight",
-      "ArrowDown"
+      "ArrowDown",
     ];
 
     if (possibleKeys.includes(key)) {
@@ -90,7 +95,7 @@ window.onload = function () {
   // Retrieve the high score from localStorage
   let highScore = localStorage.getItem('highScore') || 0;
 
-  // Function to update the score (assuming you have a function like this)
+  // Function to update the score
   function updateScore(newScore) {
     score = newScore;
     if (score > highScore) {
@@ -101,5 +106,6 @@ window.onload = function () {
     document.getElementById('high-score').textContent = highScore;
   }
 
+  // Add a keydown event listener to handle key presses
   window.addEventListener("keydown", handleKeydown);
 };
