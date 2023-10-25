@@ -3,8 +3,8 @@ class Obstacle {
       this.gameScreen = gameScreen;
       this.left = Math.floor(Math.random() * 300 + 70);
       this.top = Math.floor(Math.random() * 300 + 70);
-      this.width = 35; // size of obstacle
-      this.height = 35;
+      this.width = 25; // size of obstacle
+      this.height = 25;
       
       this.element = document.createElement("img");
   

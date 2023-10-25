@@ -3,7 +3,7 @@ class Game {
     this.startScreen = document.getElementById("game-intro");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
-    this.player = new Player(this.gameScreen, 200, 500, 35, 35, "./images/snake-head4.png"); // Snake head
+    this.player = new Player(this.gameScreen, 200, 500, 20, 20, "./images/snake-body4.png");
     this.height = 500;
     this.width = 500;
     this.obstacles = [];
@@ -51,7 +51,7 @@ class Game {
       if (this.player.didCollide(obstacle)) {
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
-        this.score++;
+        this.score = this.score+10;
 
         // Update the high score if the current score is higher
         if (this.score > this.highScore) {

@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <title>Retro Snake Game</title>
+    <title>Snake Game</title>
   </head>
   <body>
+    <!-- Eat Food Sound -->
     <audio id="eatSound" src="./media/swallow.mp3"></audio>
     <div id="countdown-container" style="display: none;"> <!-- Hide countdown by default -->
       <p id="countdown-timer">3</p>
@@ -15,9 +16,10 @@
     <main>
       <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
-        <img src="./images/textanim-na70q.gif" alt="" class="game-name" />
-        <br />
-        <button id="start-button">Start Game</button>
+        <p class="game-name">SNAKE GAME</p>
+        <img src="./images/snake-logo.png" alt="" class="snake-logo" style="height: 100px;" />
+        <button id="start-button">START GAME</button>
+        <br>
         <br>
         <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Controls</b></span>
         <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Use the arrows to control the snake!</span>
@@ -43,10 +45,12 @@
 
       <!-- #game-end is initially hidden using CSS style display: none -->
       <div id="game-end">
-        <h1 style="font-size: 80px;">GAMER OVER!</h1>
-        <p style="font-size: 25px;">Press <u>Restart</u> to try again</p>
-        <br />
-        <button id="restart-button">Restart</button>
+        <h1 style="font-size: 100px;">GAME OVER!</h1>
+        <p style="font-size: 25px;">PRESS <b>RETURN</b> TO GO BACK TO MAIN MENU.</p>
+        <br>
+        <br>
+        <br>
+        <button id="restart-button">RETURN</button>
       </div>
     </main>
 

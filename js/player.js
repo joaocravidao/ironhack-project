@@ -5,7 +5,7 @@
       this.segmentWidth = segmentWidth;
       this.segmentHeight = segmentHeight;
       this.directionX = 0;
-      this.directionY = 0;
+      this.directionY = -5;
       this.currentDirection = null;
   
       // Create and add the initial head segment
@@ -58,7 +58,7 @@
       if (parseInt(head.style.top) > this.gameScreen.offsetHeight - this.segmentHeight) {
         head.style.top = `${this.gameScreen.offsetHeight - this.segmentHeight - 0}px`;
       }
-    }
+  }
   
     // Function to grow the player
     grow() {
@@ -68,7 +68,7 @@
       const newSegment = this.createSegment(newLeft, newTop, "./images/snake-body4.png"); // First image 
       this.segments.push(newSegment);
     }
-
+ 
     didCollide(obstacle) {
       const head = this.segments[0];
       const playerRect = head.getBoundingClientRect();
@@ -84,51 +84,9 @@
 
         const eatSound = document.getElementById("eatSound");
         eatSound.play();
-
-        return true;
-        
-      } else {
+        return true;  
+      }
         return false;
       }
     }
-
-    didCollideWithSegment(segment) {
-      const head = this.segments[0];
-      const playerRect = head.getBoundingClientRect();
-      const segmentRect = segment.getBoundingClientRect();
-  
-      return (
-        playerRect.left < segmentRect.right &&
-        playerRect.right > segmentRect.left &&
-        playerRect.top < segmentRect.bottom &&
-        playerRect.bottom > segmentRect.top
-      );
-    }
-
-    reset(initialLeft, initialTop, imgSrc) {
-      // Clear the existing segments
-      /*this.segments.forEach(segment => {
-        segment.remove();
-      });
-      this.segments = [];
-    
-      // Create and add the initial head segment with new coordinates and image source
-      const head = this.createSegment(initialLeft, initialTop, imgSrc);
-      this.segments.push(head);*/
-
-      for (let i = this.segments.length - 1; i > 0; i--) {
-        this.segments[i].remove();
-      }
-      this.segments = [this.segments[0]]; // Keep the head
-    
-      // Update the head's position and image source
-      const head = this.segments[0];
-      head.src = imgSrc;
-      head.style.left = `${initialLeft}px`;
-      head.style.top = `${initialTop}px`;
-    }
-
-
-
-  }
   

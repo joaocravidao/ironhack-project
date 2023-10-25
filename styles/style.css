@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: rgb(36, 106, 144);
+  background: radial-gradient(at center,#009500, #006400);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -38,11 +38,11 @@ body {
 }
 
 #score-container {
-  left: 5px;
+  left: 50px;
 }
 
 #high-score-container {
-  right: 5px;
+  right: 50px;
 }
 
 #game-screen {
@@ -80,8 +80,9 @@ body {
 }
 
 .game-name {
-  width: 500px;
-  height: 100px;
+  font-size: 100px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 20px;
 }
 
 .arrows-img {
@@ -89,33 +90,39 @@ body {
 }
 
 #start-button {
-  background-color: #007bff;
+  margin-top: 20px;
+  background-color: #007800;
   color: #fff;
   font-size: 50px;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
   width: auto;
   height: auto;
+  border: 2px solid black;
 }
 
 #start-button:hover {
-  background-color: #0056b3;
+  background-color: #004e11;
 }
 
 #restart-button {
-  background-color: #007bff;
+  background-color: #007800;
   color: #fff;
   font-size: 50px;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
   width: auto;
   height: auto;
+}
+
+#restart-button:hover {
+  background-color: #004e11;
 }
 
 #countdown-container {
@@ -123,10 +130,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 6rem;
 }
 
 #countdown-timer {
   font-weight: bold;
-  color: #fff;
+  color: #000000;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
