@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ironhack Project</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-    <div id="game-intro">
-      <h1>Angry Worm</h1>
-      <img src="./docs/angry-worm-logo.png" class="img-main"/>
-      <br />
-      <button id="btn"> Start Game</button>
-   </div>
-   <div class="main-div">
-     <div id="instructions">
-       <h4>Instructions</h4>
-       <p class="pp">You can't hit the walls</p>
-       <p class="pp">You can't hit your own angry worm body</p>
-     </div>
-     <div id="controls">
-      <h4>Use Arrow keys to play</h4>
-      <img src="./docs/arrows.png" class="img-arrows"/>
-     </div>
-   </div>
-   <div id="game-container">
-    
-   </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Snake Game</title>
+  </head>
+  <body>
+    <!-- Eat Food Sound -->
+    <audio id="eatSound" src="./media/swallow.mp3"></audio>
+    <div id="countdown-container" style="display: none;"> <!-- Hide countdown by default -->
+      <p id="countdown-timer">3</p>
+    </div>
+    <main>
+      <!-- #game-intro is initially shown on the game start screen -->
+      <div id="game-intro">
+        <p class="game-name">SNAKE GAME</p>
+        <img src="./images/snake-logo.png" alt="" class="snake-logo" style="height: 100px;" />
+        <button id="start-button">START GAME</button>
+        <br>
+        <br>
+        <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Controls</b></span>
+        <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Use the arrows to control the snake!</span>
+        <br>
+        <img src="./images/arrows.png" alt="" class="arrows-img" />
+      </div>
+
+
+      
+      <div id="game-container">
+        <!-- #game-screen is initially hidden using CSS style display: none -->
+        <div id="game-screen">
+          <div id="score-container">
+            <p>Score</p>
+            <p id="score">0</p>
+          </div>
+          <div id="high-score-container">
+            <p>High Score</p>
+            <p id="high-score">0</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- #game-end is initially hidden using CSS style display: none -->
+      <div id="game-end">
+        <h1 style="font-size: 100px;">GAME OVER!</h1>
+        <p style="font-size: 25px;">PRESS <b>RETURN</b> TO GO BACK TO MAIN MENU.</p>
+        <br>
+        <br>
+        <br>
+        <button id="restart-button">RETURN</button>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="js/obstacle.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
 </html>
