@@ -4,56 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <title>Snake Game</title>
+    <link rel="stylesheet" href="./styles/style.css" /> <!-- Link to an external stylesheet -->
+    <title>Snake Game</title> <!-- The title of the web page -->
+    <link rel="icon" type="images/snake-logo" href="images/snake-logo.png">
   </head>
   <body>
-    <!-- Eat Food Sound -->
-    <audio id="eatSound" src="./media/swallow.mp3"></audio>
-    <div id="countdown-container" style="display: none;"> <!-- Hide countdown by default -->
-      <p id="countdown-timer">3</p>
+    <!-- Eat Food Sound - an audio element for eating food sound -->
+    <audio id="eatSound" src="./media/eat-food.mp3"></audio>
+
+    <!-- Countdown container initially hidden -->
+    <div id="countdown-container" style="display: none;">
+      <p id="countdown-timer">3</p> <!-- A countdown timer for the game start -->
     </div>
+
     <main>
-      <!-- #game-intro is initially shown on the game start screen -->
+      <!-- Game Introduction Section -->
       <div id="game-intro">
-        <p class="game-name">SNAKE GAME</p>
+        <p class="game-name">SNAKE GAME</p> <!-- Game name -->
         <img src="./images/snake-logo.png" alt="" class="snake-logo" style="height: 100px;" />
-        <button id="start-button">START GAME</button>
+        <!-- Snake logo image -->
+        <button id="start-button">START GAME</button> <!-- Button to start the game -->
         <br>
         <br>
         <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Controls</b></span>
+        <!-- Control instructions -->
         <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Use the arrows to control the snake!</span>
         <br>
         <img src="./images/arrows.png" alt="" class="arrows-img" />
+        <!-- Arrow keys image for visual control reference -->
       </div>
-
 
       
       <div id="game-container">
+          <!-- Score and High Score containers -->
+          <div id="score-container"  style = 'display: none;'>
+            <p>Score</p>
+            <p id="score">0</p> <!-- Display the player's score -->
+          </div>
+          <div id="high-score-container"  style = 'display: none;'>
+            <p>High Score</p>
+            <p id="high-score">0</p> <!-- Display the highest score achieved -->
+          </div>
+        <!-- Game Screen Section --> 
         <!-- #game-screen is initially hidden using CSS style display: none -->
         <div id="game-screen">
-          <div id="score-container">
-            <p>Score</p>
-            <p id="score">0</p>
-          </div>
-          <div id="high-score-container">
-            <p>High Score</p>
-            <p id="high-score">0</p>
-          </div>
         </div>
       </div>
 
+      <!-- Game Over Section -->
       <!-- #game-end is initially hidden using CSS style display: none -->
       <div id="game-end">
-        <h1 style="font-size: 100px;">GAME OVER!</h1>
-        <p style="font-size: 25px;">PRESS <b>RETURN</b> TO GO BACK TO MAIN MENU.</p>
+        <h1 style="font-size: 100px;">GAME OVER!</h1> <!-- Display "Game Over" message -->
+        <p style="font-size: 25px;">PRESS <b>RETRY</b> TO PLAY AGAIN.</p>
+        <!-- Instructions for returning to the main menu -->
         <br>
         <br>
-        <br>
-        <button id="restart-button">RETURN</button>
+        <button id="restart-button">RETRY</button> <!-- Button to retry the game again -->
+        <audio id="game-over-audio" src="./media/game-over-evil.mp3"></audio> <!-- Game Over sound -->
       </div>
     </main>
 
+    <!-- JavaScript script references for game functionality -->
     <script type="text/javascript" src="js/obstacle.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
