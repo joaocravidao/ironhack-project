@@ -8,7 +8,7 @@ class Player {
     this.directionX = 0; // Initial movement direction along the X-axis
     this.directionY = -5; // Initial movement direction along the Y-axis
     this.currentDirection = null; // Current direction of the snake
-
+    
     // Create and add the initial head segment
     const head = this.createSegment(initialLeft, initialTop, imgSrc);
     this.segments.push(head);
