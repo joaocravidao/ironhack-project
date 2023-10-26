@@ -4,6 +4,8 @@ window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
   let game;
+  let highScoreContainer = document.getElementById('high-score-container')
+  let scoreContainer = document.getElementById('score-container')
 
   // Add a click event listener to the "Start Game" button
   startButton.addEventListener("click", function () {
@@ -19,6 +21,9 @@ window.onload = function () {
     function startCountdown() {
       countdownContainer.style.display = "block";
       countdownTimer.textContent = countdown;
+      highScoreContainer.style.display='none'
+      scoreContainer.style.display='none'
+
 
       const countdownInterval = setInterval(function () {
         countdown--;
@@ -36,21 +41,22 @@ window.onload = function () {
   });
 
   // Add a click event listener to the "Restart" button
-  restartButton.addEventListener("click", function () {
+    restartButton.addEventListener("click", function() {
     console.log("Restarting the game");
-    restartGame();
+    if(game){
+      game.gameScreen.innerHTML = '';
+      game.player.reset(200, 500, "./images/snake-head4.png")
+    }
+
+    startGame();
   });
 
-  // Function to restart the game by reloading the page
-  function restartGame() {
-    location.reload();
-  }
-
-  // Function to start the game
+    // Function to start the game
   function startGame() {
     console.log("start game");
     game = new Game(); // Create a new game instance first
     game.gameEndScreen.style.display = "none"; // Then hide the game end screen
+    highScoreContainer.style.display='none'
     game.start(); // Finally, start the game
   }
 

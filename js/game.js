@@ -16,6 +16,10 @@ class Game {
 
     // Retrieve the high score from local storage or set it to 0 if it doesn't exist
     this.highScore = parseInt(localStorage.getItem('highScore')) || 0;
+    this.highScoreContainer = document.getElementById('high-score-container')
+
+    //score container
+    this.scoreContainer = document.getElementById('score-container')
   }
 
   start() {
@@ -26,6 +30,9 @@ class Game {
     // Hide the start screen and display the game screen
     this.startScreen.style.display = "none";
     this.gameScreen.style.display = "block";
+    this.scoreContainer.style.display = 'block'
+    this.highScoreContainer.style.display='block'
+/*     this.highScoreContainer.style.display='none' */
 
     // Start the game loop
     this.gameLoop();
@@ -117,5 +124,7 @@ class Game {
     // Show the game end screen
     this.gameScreen.style.display = "none";
     this.gameEndScreen.style.display = "block";
+    this.scoreContainer.style.display = 'block';
+    this.highScoreContainer.style.display='block'
   }
 }
