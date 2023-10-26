@@ -64,7 +64,7 @@ class Player {
     const tail = this.segments[this.segments.length - 1];
     const newLeft = parseInt(tail.style.left);
     const newTop = parseInt(tail.style.top);
-    const newSegment = this.createSegment(newLeft, newTop, "./images/snake-body4.png"); // Add a new segment
+    const newSegment = this.createSegment(newLeft, newTop, "./docs/images/snake-body4.png"); // Add a new segment
     this.segments.push(newSegment);
   }
 

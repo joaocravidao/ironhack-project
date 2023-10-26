@@ -6,7 +6,7 @@ class Game {
     this.gameEndScreen = document.getElementById("game-end");
     
     // Create a player and initialize game properties
-    this.player = new Player(this.gameScreen, 200, 500, 20, 20, "./images/snake-body4.png");
+    this.player = new Player(this.gameScreen, 200, 500, 20, 20, "./docs/images/snake-body4.png");
     this.height = 500;
     this.width = 500;
     this.obstacles = [];

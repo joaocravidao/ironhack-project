@@ -45,7 +45,7 @@ window.onload = function () {
     console.log("Restarting the game");
     if(game){
       game.gameScreen.innerHTML = '';
-      game.player.reset(200, 500, "./images/snake-head4.png")
+      game.player.reset(200, 500, "./docs/images/snake-head4.png")
     }
 
     startGame();

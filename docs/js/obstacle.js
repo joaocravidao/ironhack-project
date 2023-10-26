@@ -10,7 +10,7 @@ class Obstacle {
     // Create an image element to represent the obstacle
     this.element = document.createElement("img");
     
-    this.element.src = "./images/food.png"; // Set the image source (food)
+    this.element.src = "./docs/images/food.png"; // Set the image source (food)
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
