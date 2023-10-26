@@ -9,12 +9,12 @@ class Player {
     this.directionY = -5; // Initial movement direction along the Y-axis
     this.currentDirection = null; // Current direction of the snake
     
-    // Create and add the initial head segment
+// Create and add the initial head segment
     const head = this.createSegment(initialLeft, initialTop, imgSrc);
     this.segments.push(head);
   }
 
-  // Create a new segment for the player's body
+// Create a new segment for the player's body
   createSegment(left, top, imgSrc) {
     const element = document.createElement("img");
     element.src = imgSrc; // Set the image source
@@ -28,7 +28,7 @@ class Player {
   }
 
   move() {
-    // Move each segment starting from the tail to the head
+// Move each segment starting from the tail to the head
     for (let i = this.segments.length - 1; i > 0; i--) {
       const prevSegment = this.segments[i - 1];
       const segment = this.segments[i];
@@ -36,12 +36,12 @@ class Player {
       segment.style.top = prevSegment.style.top;
     }
 
-    // Move the head segment based on directionX and directionY
+// Move the head segment based on directionX and directionY
     const head = this.segments[0];
     head.style.left = `${parseInt(head.style.left) + this.directionX}px`;
     head.style.top = `${parseInt(head.style.top) + this.directionY}px`;
 
-    // Ensure the player's head stays within the game screen
+// Ensure the player's head stays within the game screen
     if (parseInt(head.style.left) < 0) {
       head.style.left = "0px";
     }
@@ -68,7 +68,7 @@ class Player {
     this.segments.push(newSegment);
   }
 
-  // Function to check if the player's head collided with an obstacle
+// Function to check if the player's head collided with an obstacle
   didCollide(obstacle) {
     const head = this.segments[0];
     const playerRect = head.getBoundingClientRect();
@@ -94,9 +94,8 @@ class Player {
      this.segments[i].remove();
    }
    this.segments = [this.segments[0]]; // Keep the head
-   // Update the head's position and image source
+// Update the head's position and image source
    const head = this.segments[0];
-   //head.src = imgSrc;
    head.style.left = `${initialLeft}px`;
    head.style.top = `${initialTop}px`;
   }

@@ -1,19 +1,19 @@
 // This function runs when the window has finished loading
 window.onload = function () {
-  // Get references to the start and restart buttons and initialize the game variable
+// Get references to the start and restart buttons and initialize the game variable
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
   let game;
   let highScoreContainer = document.getElementById('high-score-container')
   let scoreContainer = document.getElementById('score-container')
 
-  // Add a click event listener to the "Start Game" button
+// Add a click event listener to the "Start Game" button
   startButton.addEventListener("click", function () {
-    // Hide or remove the game intro elements
+// Hide or remove the game intro elements
     const gameIntro = document.getElementById("game-intro");
     gameIntro.style.display = "none"; // You can use "none" to hide or "remove()" to remove the element
 
-    // Countdown code here
+// Countdown code here
     const countdownContainer = document.getElementById("countdown-container");
     const countdownTimer = document.getElementById("countdown-timer");
     let countdown = 3; // Set the initial countdown value
@@ -40,7 +40,7 @@ window.onload = function () {
     startCountdown(); // Start the countdown when you click the "Start Game" button
   });
 
-  // Add a click event listener to the "Restart" button
+// Add a click event listener to the "Restart" button
     restartButton.addEventListener("click", function() {
     console.log("Restarting the game");
     if(game){
@@ -51,16 +51,16 @@ window.onload = function () {
     startGame();
   });
 
-    // Function to start the game
+// Function to start the game
   function startGame() {
     console.log("start game");
     game = new Game(); // Create a new game instance first
     game.gameEndScreen.style.display = "none"; // Then hide the game end screen
-    highScoreContainer.style.display='none'
+    highScoreContainer.style.display = "none";
     game.start(); // Finally, start the game
   }
 
-  // Function that handles key events
+// Function that handles key events
   function handleKeydown(event) {
     const key = event.key;
 
@@ -76,7 +76,7 @@ window.onload = function () {
       console.log(`Key pressed: ${key}`);
 
       if (game) {
-        // Check if the new direction is not opposite to the current direction
+// Check if the new direction is not opposite to the current direction
         if (key === "ArrowLeft" && game.player.currentDirection !== "ArrowRight") {
           game.player.directionX = -5;
           game.player.directionY = 0;
@@ -98,10 +98,10 @@ window.onload = function () {
     }
   }
 
-  // Retrieve the high score from localStorage
+// Retrieve the high score from localStorage
   let highScore = localStorage.getItem('highScore') || 0;
 
-  // Function to update the score
+// Function to update the score
   function updateScore(newScore) {
     score = newScore;
     if (score > highScore) {
@@ -112,6 +112,6 @@ window.onload = function () {
     document.getElementById('high-score').textContent = highScore;
   }
 
-  // Add a keydown event listener to handle key presses
+// Add a keydown event listener to handle key presses
   window.addEventListener("keydown", handleKeydown);
 };

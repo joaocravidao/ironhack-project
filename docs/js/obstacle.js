@@ -4,10 +4,10 @@ class Obstacle {
     this.gameScreen = gameScreen;
     this.left = Math.floor(Math.random() * 300 + 70); // Random X-coordinate within a range
     this.top = Math.floor(Math.random() * 300 + 70); // Random Y-coordinate within a range
-    this.width = 25; // Size of the obstacle (food)
-    this.height = 25;
+    this.width = 25; // Width of the obstacle (food)
+    this.height = 25; // Height of the obstacle (food)
 
-    // Create an image element to represent the obstacle
+// Create an image element to represent the obstacle (food)
     this.element = document.createElement("img");
     
     this.element.src = "./docs/images/food.png"; // Set the image source (food)
@@ -17,19 +17,19 @@ class Obstacle {
     this.element.style.left = `${this.left}px`; // Set the initial X-coordinate
     this.element.style.top = `${this.top}px`; // Set the initial Y-coordinate
 
-    // Add the obstacle (food) element to the game screen
+// Add the obstacle (food) element to the game screen
     this.gameScreen.appendChild(this.element);
   }
 
-  // Function to update the position of the obstacle
+// Function to update the position of the obstacle
   updatePosition() {
     this.element.style.left = `${this.left}px`;
     this.element.style.top = `${this.top}px`;
   }
 
-  // Function to move the obstacle (currently not used in this code)
+// Function to move the obstacle
   move() {
-    // Update the obstacle's position on the screen
+// Update the obstacle's position on the screen
     this.updatePosition();
   }
 }
