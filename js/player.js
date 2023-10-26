@@ -96,7 +96,7 @@ class Player {
    this.segments = [this.segments[0]]; // Keep the head
    // Update the head's position and image source
    const head = this.segments[0];
-   head.src = imgSrc;
+   //head.src = imgSrc;
    head.style.left = `${initialLeft}px`;
    head.style.top = `${initialTop}px`;
   }
