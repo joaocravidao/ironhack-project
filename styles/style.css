@@ -131,6 +131,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 6rem;
+  background-color: rgba(240, 240, 255, 0.5); /* 50% opacity background color */
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  border-radius: 100px;
 }
 
 #countdown-timer {
